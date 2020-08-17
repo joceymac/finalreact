@@ -18,11 +18,17 @@ const Listings = () => {
         event.preventDefault()
         redirectLogin()
     }
-    
+    const admin = event => {
+        event.preventDefault()
+        // redirectAdmin()
+    }
     const redirectLogin = useCallback(() =>{
         sessionStorage.removeItem('token')
         history.push("/login")
     },[history])
+
+    
+
 
     const retrieveCred = useCallback((tok) => {
         if (tok === undefined) {
@@ -97,7 +103,9 @@ const Listings = () => {
                 </tbody>
             </Table>
         <Row className="my-5">
-            <Button onClick={logout} color="primary">Logout</Button>
+            <Button onClick={logout} color="primary">Logout</Button> {' '}
+
+            <Button onCLick={admin} color="secondary">Admin</Button>
         </Row>
 
         </div>

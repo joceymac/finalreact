@@ -11,6 +11,7 @@ import Login from './components/pages/Login'
 import Listing from './components/pages/Listing'
 import PrivateRoute from './components/shared/PrivateRoute'
 import ColoredLine from './components/shared/ColoredLine'
+// import Admin from './components/pages/Admin'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/listing" component={Listing} />
+          {/* <Route exact path="/admin" component={Admin} /> */}
           <PrivateRoute path="/listing">
             <Listing />
           </PrivateRoute>
